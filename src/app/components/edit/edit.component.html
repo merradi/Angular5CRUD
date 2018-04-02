@@ -1,0 +1,29 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      {{ title }}
+    </div>
+    <div class="panel-body">
+      <div>
+        <div class="form-group">
+          <label class="control-label">Name:</label>
+          <input type="text" class="form-control" [(ngModel)]="coin.nom"/>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label">Prénom:</label>
+            <input type="text" class="form-control" [(ngModel)]="coin.prenom"/>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label">Email:</label>
+            <input type="text" class="form-control" [(ngModel)]="coin.email"/>
+        </div>
+
+        
+        <button class="btn btn-primary" (click)="updateContact()">Update</button>
+    </div>
+    </div>
+  </div>
+
+  
+  

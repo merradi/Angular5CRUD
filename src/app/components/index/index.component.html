@@ -1,0 +1,38 @@
+
+<div class="container spacer">
+  <div class="panel panel-primary">
+    <div class="panel-heading">Liste des contacts</div>
+      <div class="panel-body">
+        <label>Mot Clé:</label>
+        <input type="text" [(ngModel)]="motCle"/>
+        <button class="btn bnt-primary" (click)="search()">Chercher</button>
+      </div>
+<table class="table table-hover" *ngIf="contacts">
+  <thead>
+  <tr>
+        <td>contact Id</td>
+      <td>contact Name</td>
+      <td>contact email</td>
+      <td colspan="2">Actions</td>
+  </tr>
+  </thead>
+
+  <tbody>
+    <!--<tr *ngFor="let contact of contacts.content">-->
+      <tr *ngFor="let contact of contacts.content">
+            <td>{{ contact.id }}</td>
+          <td>{{ contact.nom }}</td>
+          <td>{{ contact.email }}</td>
+          <td><a [routerLink]="['/edit', contact.id]" class="btn btn-primary">Edit</a></td>
+          <td><button (click)="deleteContact(contact)"  class="btn btn-danger">Delete</button></td>
+      </tr>
+  </tbody>
+</table>
+<div class="container">
+  <ul class="nav nav-pills">
+    <li [ngClass]="{'active':currentPage==(i)}" *ngFor="let p of pages; let i=index">
+      <a class="clickable" (click)="gotoPage(i)">{{i}}</a></li>
+  </ul>
+</div>
+</div>
+</div>
